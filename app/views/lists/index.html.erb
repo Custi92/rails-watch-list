@@ -20,7 +20,7 @@
       </div>
     <% end %>
   </div>
-  <%= simple_form_for(list) do |f| %>
+  <%= simple_form_for(@list) do |f| %>
     <%= f.input :photo, as: :file %>
   <% end %>
 </div>
