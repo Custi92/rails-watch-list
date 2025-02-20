@@ -11,6 +11,7 @@
 
 <h1>List</h1>
 <p><%= @list.name %></p>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 <p>Movies :</p>
 <% @list.movies.each do |movie| %>
 <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
