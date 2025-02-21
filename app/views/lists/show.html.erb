@@ -11,10 +11,12 @@
 
 <h1>List</h1>
 <p><%= @list.name %></p>
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<%= image_tag @list.image, alt: @list.name, class: "movie-img rounded-top" %>
 <p>Movies :</p>
 <% @list.movies.each do |movie| %>
 <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+<%= image_tag movie.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+<br>
 <%= movie.title %>
 <%= movie.overview %>
 <%= movie.rating %>
